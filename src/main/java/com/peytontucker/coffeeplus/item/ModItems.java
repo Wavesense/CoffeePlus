@@ -16,6 +16,9 @@ public class ModItems {
     public static final RegistryObject<Item> MOKA_POT = ITEMS.register("moka_pot",
             () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
 
+    public static final RegistryObject<Item> COFFEE_BEANS = ITEMS.register("coffee_beans",
+            () -> new Item(new Item.Properties().group(ItemGroup.MATERIALS)));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
