@@ -1,5 +1,6 @@
 package com.peytontucker.coffeeplus;
 
+import com.peytontucker.coffeeplus.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -31,6 +32,9 @@ public class CoffeePlus
     public CoffeePlus() {
         // Register the setup method for modloading
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(eventBus);
+
         eventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading
         eventBus.addListener(this::enqueueIMC);
