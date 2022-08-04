@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "coffeeplus:block/coffee_grinder_top",
+    "side": "coffeeplus:block/coffee_grinder_side",
+    "bottom": "coffeeplus:block/coffee_grinder_bottom"
+  }
+}
