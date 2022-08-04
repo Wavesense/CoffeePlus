@@ -1,6 +1,7 @@
 package com.peytontucker.coffeeplus.item.custom;
 
 import com.peytontucker.coffeeplus.block.ModBlocks;
+import com.peytontucker.coffeeplus.item.ModItems;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -35,6 +36,9 @@ public class CoffeeBeans extends Item {
 
             //decrement item count by 1
             context.getItem().setCount(context.getItem().getCount()-1);
+
+            //add Ground Coffee to inventory
+            playerEntity.addItemStackToInventory(new ItemStack(ModItems.GROUND_COFFEE.get()));
         }
     }
 }
