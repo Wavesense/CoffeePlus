@@ -22,6 +22,9 @@ public class ModItems {
     public static final RegistryObject<Item> COFFEE_BEANS = ITEMS.register("coffee_beans",
             () -> new Item(new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
 
+    public static final RegistryObject<Item> GROUND_COFFEE = ITEMS.register("ground_coffee",
+            () -> new Item(new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
