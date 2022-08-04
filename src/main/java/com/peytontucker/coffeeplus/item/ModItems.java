@@ -1,5 +1,6 @@
 package com.peytontucker.coffeeplus.item;
 
+import com.peytontucker.coffeeplus.item.custom.CoffeeBeans;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -20,7 +21,7 @@ public class ModItems {
 
 
     public static final RegistryObject<Item> COFFEE_BEANS = ITEMS.register("coffee_beans",
-            () -> new Item(new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
+            () -> new CoffeeBeans(new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
 
     public static final RegistryObject<Item> GROUND_COFFEE = ITEMS.register("ground_coffee",
             () -> new Item(new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
