@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "coffeeplus:block/coffee_grinder"
+  }
+}
