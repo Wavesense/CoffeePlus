@@ -24,11 +24,11 @@ public class ModBlocks {
 
     // actual code for compressed coffee
     public static final RegistryObject<Block> COFFEE_GRINDER = registerBlock("coffee_grinder",
-            () -> new Block(AbstractBlock.Properties.create(Material.ROCK)
-                    .harvestLevel(1)
-                    .harvestTool(ToolType.PICKAXE)
-                    .setRequiresTool()
-                    .hardnessAndResistance(5f)));
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK) // set to rock material
+                    .harvestLevel(1) // harvestable w at least stone
+                    .harvestTool(ToolType.PICKAXE) // must use pickaxe
+                    .setRequiresTool() // needed to require a specific tool
+                    .hardnessAndResistance(5f))); // controls how fast mined
 
 
     // Registers a block. This is the method that should be called to register a block.

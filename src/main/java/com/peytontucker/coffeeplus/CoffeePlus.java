@@ -34,6 +34,7 @@ public class CoffeePlus
         // Register the setup method for modloading
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        // These lines register the items and blocks of the mod
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
 
