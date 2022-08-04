@@ -1,6 +1,8 @@
 {
-  "parent": "block/cube_all",
+  "parent": "minecraft:block/cube_bottom_top",
   "textures": {
-    "all": "coffeeplus:block/coffee_grinder"
+    "top": "coffeeplus:block/coffee_grinder_top",
+    "side": "coffeeplus:block/coffee_grinder_side",
+    "bottom": "coffeeplus:block/coffee_grinder_bottom"
   }
 }
