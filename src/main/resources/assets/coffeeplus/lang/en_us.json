@@ -5,5 +5,6 @@
   "item.coffeeplus.coffee_beans": "Coffee Beans",
   "item.coffeeplus.ground_coffee": "Ground Coffee",
 
-  "block.coffeeplus.coffee_grinder": "Coffee Grinder"
+  "block.coffeeplus.coffee_grinder": "Coffee Grinder",
+  "block.coffeeplus.coffee_sack": "Sack o' Beans"
 }

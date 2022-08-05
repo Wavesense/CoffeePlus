@@ -1,5 +1,5 @@
 {
   "variants": {
-    "": { "model":  "coffeeplus:block/coffee_grinder" }
+    "": { "model":  "coffeeplus:block/coffee_sack" }
   }
 }

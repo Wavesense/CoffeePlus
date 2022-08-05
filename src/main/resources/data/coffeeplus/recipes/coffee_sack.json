@@ -1,25 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    " H ",
-    "WIW",
-    "WBW"
+    "CCC",
+    "CCC",
+    "CCC"
   ],
   "key": {
-    "H": {
-      "item": "minecraft:hopper"
-    },
-    "I": {
-      "item": "minecraft:iron_ingot"
-    },
-    "B": {
-      "item": "minecraft:bowl"
-    },
-    "W": {
-      "tag": "minecraft:planks"
+    "C": {
+      "item": "coffeeplus:coffee_beans"
     }
   },
   "result": {
-    "item": "coffeeplus:coffee_grinder"
+    "item": "coffeeplus:coffee_sack"
   }
 }

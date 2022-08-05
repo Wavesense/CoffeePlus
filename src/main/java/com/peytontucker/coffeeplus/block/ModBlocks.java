@@ -30,6 +30,10 @@ public class ModBlocks {
                     .setRequiresTool() // needed to require a specific tool
                     .hardnessAndResistance(5f))); // controls how fast mined
 
+    // Coffee Sack block.
+    public static final RegistryObject<Block> COFFEE_SACK = registerBlock("coffee_sack",
+            () -> new Block(AbstractBlock.Properties.create(Material.GOURD).hardnessAndResistance(1f)));
+
 
     // Registers a block. This is the method that should be called to register a block.
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block) {
