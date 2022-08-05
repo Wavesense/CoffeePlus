@@ -37,6 +37,10 @@ public class CoffeeBeans extends Item {
             //decrement item count by 1
             context.getItem().setCount(context.getItem().getCount()-1);
 
+            //check if inventory is full; drop Ground Coffee if it's full
+            if (playerEntity.inventory.getFirstEmptyStack() < 0)
+                playerEntity.dropItem(new ItemStack(ModItems.GROUND_COFFEE.get()), true);
+
             //add Ground Coffee to inventory
             playerEntity.addItemStackToInventory(new ItemStack(ModItems.GROUND_COFFEE.get()));
         }
