@@ -1,7 +1,9 @@
 package com.peytontucker.coffeeplus.block;
 
 import com.peytontucker.coffeeplus.CoffeePlus;
+import com.peytontucker.coffeeplus.block.custom.CoffeeGrinder;
 import com.peytontucker.coffeeplus.block.custom.CoffeePlantBlock;
+import com.peytontucker.coffeeplus.block.custom.MokaPotBlock;
 import com.peytontucker.coffeeplus.item.ModItemGroup;
 import com.peytontucker.coffeeplus.item.ModItems;
 import net.minecraft.block.AbstractBlock;
@@ -26,7 +28,7 @@ public class ModBlocks {
 
     // actual code for compressed coffee
     public static final RegistryObject<Block> COFFEE_GRINDER = registerBlock("coffee_grinder",
-            () -> new Block(AbstractBlock.Properties.create(Material.ROCK) // set to rock material
+            () -> new CoffeeGrinder(AbstractBlock.Properties.create(Material.ROCK) // set to rock material
                     .harvestLevel(1) // harvestable w at least stone
                     .harvestTool(ToolType.PICKAXE) // must use pickaxe
                     .setRequiresTool() // needed to require a specific tool
@@ -43,9 +45,10 @@ public class ModBlocks {
             () -> new CoffeePlantBlock(AbstractBlock.Properties.from(Blocks.CARROTS)));
 
     public static final RegistryObject<Block> MOKA_POT = BLOCKS.register("moka_pot",
-            () -> new Block(AbstractBlock.Properties
+            () -> new MokaPotBlock(AbstractBlock.Properties
                     .create(Material.IRON)
-                    .hardnessAndResistance(4f)));
+                    .hardnessAndResistance(4f)
+                    .notSolid()));
 
 
 
