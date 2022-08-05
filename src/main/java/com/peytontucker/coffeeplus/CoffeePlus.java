@@ -62,6 +62,9 @@ public class CoffeePlus
     private void doClientStuff(final FMLClientSetupEvent event) {
         // do something that can only be done on the client
         RenderTypeLookup.setRenderLayer(ModBlocks.COFFEE_PLANT.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(ModBlocks.MOKA_POT.get(), RenderType.getCutout());
+
+
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)

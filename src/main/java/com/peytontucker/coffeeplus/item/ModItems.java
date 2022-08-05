@@ -24,7 +24,8 @@ public class ModItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, CoffeePlus.MOD_ID);
 
     public static final RegistryObject<Item> MOKA_POT = ITEMS.register("moka_pot",
-            () -> new Item(new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
+            () -> new BlockItem(ModBlocks.MOKA_POT.get(),
+                    new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
 
 
     public static final RegistryObject<Item> COFFEE_BEANS = ITEMS.register("coffee_beans",

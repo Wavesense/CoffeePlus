@@ -42,6 +42,13 @@ public class ModBlocks {
     public static final RegistryObject<Block> COFFEE_PLANT = BLOCKS.register("coffee_plant",
             () -> new CoffeePlantBlock(AbstractBlock.Properties.from(Blocks.CARROTS)));
 
+    public static final RegistryObject<Block> MOKA_POT = BLOCKS.register("moka_pot",
+            () -> new Block(AbstractBlock.Properties
+                    .create(Material.IRON)
+                    .hardnessAndResistance(4f)));
+
+
+
 
     // Registers a block. This is the method that should be called to register a block.
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block) {
