@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "coffeeplus:block/coffee_plant_stage3"
+  }
+}

@@ -8,5 +8,7 @@
   "item.coffeeplus.iced_coffee": "Iced Coffee",
 
   "block.coffeeplus.coffee_grinder": "Coffee Grinder",
-  "block.coffeeplus.coffee_sack": "Sack o' Beans"
+  "block.coffeeplus.coffee_sack": "Sack o' Beans",
+
+  "block.coffeeplus.coffee_plant": "Coffee Beans"
 }

@@ -1,10 +1,12 @@
 package com.peytontucker.coffeeplus.block;
 
 import com.peytontucker.coffeeplus.CoffeePlus;
+import com.peytontucker.coffeeplus.block.custom.CoffeePlantBlock;
 import com.peytontucker.coffeeplus.item.ModItemGroup;
 import com.peytontucker.coffeeplus.item.ModItems;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -33,6 +35,12 @@ public class ModBlocks {
     // Coffee Sack block.
     public static final RegistryObject<Block> COFFEE_SACK = registerBlock("coffee_sack",
             () -> new Block(AbstractBlock.Properties.create(Material.GOURD).hardnessAndResistance(1f)));
+
+    // Coffee plant block
+    // Note that we use BLOCKS.register instead of our created registerBlock method
+    // this is because registerBlock automatically creates a block item. We don't want this for crops!
+    public static final RegistryObject<Block> COFFEE_PLANT = BLOCKS.register("coffee_plant",
+            () -> new CoffeePlantBlock(AbstractBlock.Properties.from(Blocks.CARROTS)));
 
 
     // Registers a block. This is the method that should be called to register a block.
