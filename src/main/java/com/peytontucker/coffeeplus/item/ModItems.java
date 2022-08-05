@@ -3,6 +3,7 @@ package com.peytontucker.coffeeplus.item;
 import com.peytontucker.coffeeplus.block.ModBlocks;
 import com.peytontucker.coffeeplus.item.custom.CoffeeBeans;
 import net.minecraft.advancements.criterion.MobEffectsPredicate;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
@@ -27,7 +28,7 @@ public class ModItems {
 
 
     public static final RegistryObject<Item> COFFEE_BEANS = ITEMS.register("coffee_beans",
-            () -> new CoffeeBeans(new Item.Properties()
+            () -> new CoffeeBeans(ModBlocks.COFFEE_PLANT.get(), new Item.Properties()
                     .group(ModItemGroup.COFFEEPLUS_GROUP)
                     .food(new Food.Builder()
                             .hunger(1)
@@ -37,9 +38,9 @@ public class ModItems {
                             .setAlwaysEdible()
                             .build())));
 
-    public static final RegistryObject<Item> COFFEE_SEEDS = ITEMS.register("coffee_seeds",
-            () -> new BlockItem(ModBlocks.COFFEE_PLANT.get(),
-                    new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
+//    public static final RegistryObject<Item> COFFEE_SEEDS = ITEMS.register("coffee_seeds",
+//            () -> new BlockItem(ModBlocks.COFFEE_PLANT.get(),
+//                    new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
 
     public static final RegistryObject<Item> GROUND_COFFEE = ITEMS.register("ground_coffee",
             () -> new Item(new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
