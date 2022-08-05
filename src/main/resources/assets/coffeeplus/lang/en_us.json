@@ -1,7 +1,7 @@
 {
   "itemGroup.coffeePlusTab": "CoffeePlus",
 
-  "item.coffeeplus.moka_pot": "Moka Pot",
+  "block.coffeeplus.moka_pot": "Moka Pot",
   "item.coffeeplus.coffee_beans": "Coffee Beans",
   "item.coffeeplus.ground_coffee": "Ground Coffee",
   "item.coffeeplus.empty_glass": "Empty Glass",
@@ -9,5 +9,7 @@
   "item.coffeeplus.ice_cubes": "Ice Cubes",
 
   "block.coffeeplus.coffee_grinder": "Coffee Grinder",
-  "block.coffeeplus.coffee_sack": "Sack o' Beans"
+  "block.coffeeplus.coffee_sack": "Sack o' Beans",
+
+  "block.coffeeplus.coffee_plant": "Coffee Beans"
 }

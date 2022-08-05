@@ -4,16 +4,20 @@ import com.peytontucker.coffeeplus.block.ModBlocks;
 import com.peytontucker.coffeeplus.item.ModItems;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUseContext;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.world.World;
 
-public class CoffeeBeans extends Item {
-    public CoffeeBeans(Properties properties) {
-        super(properties);
+public class CoffeeBeans extends BlockItem {
+    public CoffeeBeans(Block blockIn, Properties properties) {
+        super(blockIn, properties);
     }
+
+
 
     @Override
     public ActionResultType onItemUseFirst(ItemStack stack, ItemUseContext context) {

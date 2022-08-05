@@ -1,11 +1,12 @@
 package com.peytontucker.coffeeplus.block;
 
 import com.peytontucker.coffeeplus.CoffeePlus;
-import com.peytontucker.coffeeplus.block.custom.CoffeeGrinder;
+import com.peytontucker.coffeeplus.block.custom.CoffeePlantBlock;
 import com.peytontucker.coffeeplus.item.ModItemGroup;
 import com.peytontucker.coffeeplus.item.ModItems;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -25,7 +26,7 @@ public class ModBlocks {
 
     // actual code for compressed coffee
     public static final RegistryObject<Block> COFFEE_GRINDER = registerBlock("coffee_grinder",
-            () -> new CoffeeGrinder(AbstractBlock.Properties.create(Material.ROCK) // set to rock material
+            () -> new Block(AbstractBlock.Properties.create(Material.ROCK) // set to rock material
                     .harvestLevel(1) // harvestable w at least stone
                     .harvestTool(ToolType.PICKAXE) // must use pickaxe
                     .setRequiresTool() // needed to require a specific tool
@@ -34,6 +35,19 @@ public class ModBlocks {
     // Coffee Sack block.
     public static final RegistryObject<Block> COFFEE_SACK = registerBlock("coffee_sack",
             () -> new Block(AbstractBlock.Properties.create(Material.GOURD).hardnessAndResistance(1f)));
+
+    // Coffee plant block
+    // Note that we use BLOCKS.register instead of our created registerBlock method
+    // this is because registerBlock automatically creates a block item. We don't want this for crops!
+    public static final RegistryObject<Block> COFFEE_PLANT = BLOCKS.register("coffee_plant",
+            () -> new CoffeePlantBlock(AbstractBlock.Properties.from(Blocks.CARROTS)));
+
+    public static final RegistryObject<Block> MOKA_POT = BLOCKS.register("moka_pot",
+            () -> new Block(AbstractBlock.Properties
+                    .create(Material.IRON)
+                    .hardnessAndResistance(4f)));
+
+
 
 
     // Registers a block. This is the method that should be called to register a block.
