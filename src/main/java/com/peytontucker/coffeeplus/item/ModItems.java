@@ -19,6 +19,9 @@ public class ModItems {
     public static final RegistryObject<Item> MOKA_POT = ITEMS.register("moka_pot",
             () -> new Item(new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
 
+    public static final RegistryObject<Item> ICE_CUBES = ITEMS.register("ice_cubes",
+            () -> new Item(new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
+
 
     public static final RegistryObject<Item> COFFEE_BEANS = ITEMS.register("coffee_beans",
             () -> new CoffeeBeans(new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
