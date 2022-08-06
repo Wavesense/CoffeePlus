@@ -3,6 +3,7 @@ package com.peytontucker.coffeeplus.item;
 import com.peytontucker.coffeeplus.block.ModBlocks;
 import com.peytontucker.coffeeplus.item.custom.CoffeeBeans;
 import com.peytontucker.coffeeplus.item.drinkables.DrinkableGlassItem;
+import com.peytontucker.coffeeplus.item.drinkables.IceGlassItem;
 import net.minecraft.advancements.criterion.MobEffectsPredicate;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.*;
@@ -58,7 +59,7 @@ public class ModItems {
             () -> new Item(new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
 
     public static final RegistryObject<Item> ICE_GLASS = ITEMS.register("ice_glass",
-            () -> new Item(new Item.Properties()
+            () -> new IceGlassItem(new Item.Properties()
                     .group(ModItemGroup.COFFEEPLUS_GROUP)
                     .maxStackSize(1)));
 
