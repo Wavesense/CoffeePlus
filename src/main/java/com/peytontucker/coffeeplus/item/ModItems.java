@@ -58,11 +58,14 @@ public class ModItems {
             () -> new Item(new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
 
     public static final RegistryObject<Item> ICE_GLASS = ITEMS.register("ice_glass",
-            () -> new Item(new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
+            () -> new Item(new Item.Properties()
+                    .group(ModItemGroup.COFFEEPLUS_GROUP)
+                    .maxStackSize(1)));
 
     public static final RegistryObject<Item> ICED_COFFEE = ITEMS.register("iced_coffee",
             () -> new DrinkableGlassItem(new Item.Properties()
-                    .group(ModItemGroup.COFFEEPLUS_GROUP)));
+                    .group(ModItemGroup.COFFEEPLUS_GROUP)
+                    .maxStackSize(1)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
