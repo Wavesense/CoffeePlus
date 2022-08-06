@@ -28,7 +28,13 @@ public class ModItems {
                     new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
 
     public static final RegistryObject<Item> ICE_CUBES = ITEMS.register("ice_cubes",
-            () -> new Item(new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
+            () -> new Item(new Item.Properties()
+                    .group(ModItemGroup.COFFEEPLUS_GROUP)
+                    .food(new Food.Builder()
+                            .fastToEat()
+                            .setAlwaysEdible()
+                            .effect(() -> new EffectInstance(Effects.SLOWNESS, 10, 0), 0.5f)
+                            .build())));
 
 
     public static final RegistryObject<Item> COFFEE_BEANS = ITEMS.register("coffee_beans",
@@ -42,6 +48,7 @@ public class ModItems {
                             .setAlwaysEdible()
                             .build())));
 
+    // Deprecated: Coffee seeds
 //    public static final RegistryObject<Item> COFFEE_SEEDS = ITEMS.register("coffee_seeds",
 //            () -> new BlockItem(ModBlocks.COFFEE_PLANT.get(),
 //                    new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
