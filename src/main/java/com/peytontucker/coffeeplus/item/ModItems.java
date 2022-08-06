@@ -52,6 +52,9 @@ public class ModItems {
     public static final RegistryObject<Item> EMPTY_GLASS = ITEMS.register("empty_glass",
             () -> new Item(new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
 
+    public static final RegistryObject<Item> ICE_GLASS = ITEMS.register("ice_glass",
+            () -> new Item(new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
+
     public static final RegistryObject<Item> ICED_COFFEE = ITEMS.register("iced_coffee",
             () -> new Item(new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
 

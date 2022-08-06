@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "coffeeplus:empty_glass"
+    },
+    {
+      "item": "coffeeplus:ice_cubes"
+    }
+  ],
+  "result": {
+    "item": "coffeeplus:ice_glass",
+    "count": 1
+  }
+}
