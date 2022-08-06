@@ -2,12 +2,10 @@ package com.peytontucker.coffeeplus.item;
 
 import com.peytontucker.coffeeplus.block.ModBlocks;
 import com.peytontucker.coffeeplus.item.custom.CoffeeBeans;
+import com.peytontucker.coffeeplus.item.drinkables.DrinkableGlassItem;
 import net.minecraft.advancements.criterion.MobEffectsPredicate;
 import net.minecraft.block.Blocks;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Food;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
+import net.minecraft.item.*;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -63,7 +61,8 @@ public class ModItems {
             () -> new Item(new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
 
     public static final RegistryObject<Item> ICED_COFFEE = ITEMS.register("iced_coffee",
-            () -> new Item(new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
+            () -> new DrinkableGlassItem(new Item.Properties()
+                    .group(ModItemGroup.COFFEEPLUS_GROUP)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
