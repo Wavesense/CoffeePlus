@@ -35,7 +35,8 @@ public class ModItems {
                             .effect(() -> new EffectInstance(Effects.SLOWNESS, 10, 0), 0.5f)
                             .build())));
 
-
+    public static final RegistryObject<Item> GREEN_COFFEE_BEANS = ITEMS.register("green_coffee_beans",
+            () -> new Item(new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
     public static final RegistryObject<Item> COFFEE_BEANS = ITEMS.register("coffee_beans",
             () -> new CoffeeBeans(ModBlocks.COFFEE_PLANT.get(), new Item.Properties()
                     .group(ModItemGroup.COFFEEPLUS_GROUP)
