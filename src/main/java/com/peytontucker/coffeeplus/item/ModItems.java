@@ -69,6 +69,10 @@ public class ModItems {
                     .group(ModItemGroup.COFFEEPLUS_GROUP)
                     .maxStackSize(1)));
 
+    public static final RegistryObject<Item> COFFEE_MAKER_WITH_CARAFE = ITEMS.register("coffee_maker_with_carafe",
+            () -> new BlockItem(ModBlocks.COFFEE_MAKER_WITH_CARAFE.get(),
+                    new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

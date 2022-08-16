@@ -12,5 +12,10 @@
   "block.coffeeplus.coffee_grinder": "Coffee Grinder",
   "block.coffeeplus.coffee_sack": "Sack o' Beans",
   "block.coffeeplus.moka_pot": "Moka Pot",
-  "block.coffeeplus.coffee_plant": "Coffee Beans"
+  "block.coffeeplus.coffee_plant": "Coffee Beans",
+  "block.coffeeplus.coffee_maker_with_carafe": "Coffee Maker with Carafe",
+  "block.coffeeplus.carafe": "Carafe",
+  "block.coffeeplus.coffee_maker": "Coffee Maker"
+
+
 }
