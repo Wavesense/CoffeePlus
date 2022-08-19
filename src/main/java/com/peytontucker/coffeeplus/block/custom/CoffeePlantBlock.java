@@ -24,7 +24,7 @@ public class CoffeePlantBlock extends CropsBlock  {
 
     @Override
     protected IItemProvider getSeedsItem() {
-        return ModItems.COFFEE_BEANS.get();
+        return ModItems.GREEN_COFFEE_BEANS.get();
     }
 
     @Override
