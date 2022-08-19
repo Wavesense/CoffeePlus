@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "coffeeplus:block/carafe",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "coffeeplus:block/carafe"
+    },
+    "facing=south": {
+      "model": "coffeeplus:block/carafe",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "coffeeplus:block/carafe",
+      "y": 270
+    }
+  }
+}

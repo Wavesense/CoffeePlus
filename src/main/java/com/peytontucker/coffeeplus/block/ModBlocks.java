@@ -1,9 +1,7 @@
 package com.peytontucker.coffeeplus.block;
 
 import com.peytontucker.coffeeplus.CoffeePlus;
-import com.peytontucker.coffeeplus.block.custom.CoffeeGrinder;
-import com.peytontucker.coffeeplus.block.custom.CoffeePlantBlock;
-import com.peytontucker.coffeeplus.block.custom.MokaPotBlock;
+import com.peytontucker.coffeeplus.block.custom.*;
 import com.peytontucker.coffeeplus.item.ModItemGroup;
 import com.peytontucker.coffeeplus.item.ModItems;
 import net.minecraft.block.AbstractBlock;
@@ -50,9 +48,29 @@ public class ModBlocks {
                     .hardnessAndResistance(4f)
                     .notSolid()));
 
+    public static final RegistryObject<Block> COFFEE_MAKER_WITH_CARAFE = BLOCKS.register("coffee_maker_with_carafe",
+            () -> new CoffeeMakerWithCarafe(AbstractBlock.Properties
+                    .create(Material.IRON)
+                    .hardnessAndResistance(4f)
+                    .notSolid()));
+
+    public static final RegistryObject<Block> CARAFE = registerBlock("carafe",
+            () -> new Carafe(AbstractBlock.Properties
+                    .create(Material.IRON)
+                    .hardnessAndResistance(4f)
+                    .notSolid()));
+
+    public static final RegistryObject<Block> COFFEE_MAKER = registerBlock("coffee_maker",
+            () -> new CoffeeMaker(AbstractBlock.Properties
+                    .create(Material.IRON)
+                    .hardnessAndResistance(4f)
+                    .notSolid()));
+
+
+
+
     // Registers a block. This is the method that should be called to register a block.
-    private static <T extends Block>RegistryObject<T>
-    registerBlock(String name, Supplier<T> block) {
+    private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
         return toReturn;
