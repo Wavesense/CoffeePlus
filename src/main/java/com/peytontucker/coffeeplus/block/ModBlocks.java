@@ -50,11 +50,9 @@ public class ModBlocks {
                     .hardnessAndResistance(4f)
                     .notSolid()));
 
-
-
-
     // Registers a block. This is the method that should be called to register a block.
-    private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block) {
+    private static <T extends Block>RegistryObject<T>
+    registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
         return toReturn;
