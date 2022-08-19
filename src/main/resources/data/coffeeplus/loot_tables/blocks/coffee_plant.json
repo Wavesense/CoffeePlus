@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "coffeeplus:coffee_beans"
+          "name": "coffeeplus:green_coffee_beans"
         }
       ]
     },
@@ -26,7 +26,7 @@
               }
             }
           ],
-          "name": "coffeeplus:coffee_beans"
+          "name": "coffeeplus:green_coffee_beans"
         }
       ],
       "conditions": [

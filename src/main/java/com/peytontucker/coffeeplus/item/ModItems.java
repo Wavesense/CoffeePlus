@@ -1,11 +1,9 @@
 package com.peytontucker.coffeeplus.item;
 
 import com.peytontucker.coffeeplus.block.ModBlocks;
-import com.peytontucker.coffeeplus.item.custom.CoffeeBeans;
+import com.peytontucker.coffeeplus.item.custom.GreenCoffeeBeans;
 import com.peytontucker.coffeeplus.item.drinkables.DrinkableGlassItem;
 import com.peytontucker.coffeeplus.item.drinkables.IceGlassItem;
-import net.minecraft.advancements.criterion.MobEffectsPredicate;
-import net.minecraft.block.Blocks;
 import net.minecraft.item.*;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
@@ -36,9 +34,10 @@ public class ModItems {
                             .build())));
 
     public static final RegistryObject<Item> GREEN_COFFEE_BEANS = ITEMS.register("green_coffee_beans",
-            () -> new Item(new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
+            () -> new GreenCoffeeBeans(ModBlocks.COFFEE_PLANT.get(), new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
+
     public static final RegistryObject<Item> COFFEE_BEANS = ITEMS.register("coffee_beans",
-            () -> new CoffeeBeans(ModBlocks.COFFEE_PLANT.get(), new Item.Properties()
+            () -> new Item(new Item.Properties()
                     .group(ModItemGroup.COFFEEPLUS_GROUP)
                     .food(new Food.Builder()
                             .hunger(1)
@@ -47,12 +46,6 @@ public class ModItems {
                             .effect(() -> new EffectInstance(Effects.SPEED, 60, 0), 1f)
                             .setAlwaysEdible()
                             .build())));
-
-    // Deprecated: Coffee seeds
-//    public static final RegistryObject<Item> COFFEE_SEEDS = ITEMS.register("coffee_seeds",
-//            () -> new BlockItem(ModBlocks.COFFEE_PLANT.get(),
-//                    new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
-
     public static final RegistryObject<Item> GROUND_COFFEE = ITEMS.register("ground_coffee",
             () -> new Item(new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
 
