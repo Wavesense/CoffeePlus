@@ -34,7 +34,7 @@ public class ModItems {
                             .build())));
 
     public static final RegistryObject<Item> GREEN_COFFEE_BEANS = ITEMS.register("green_coffee_beans",
-            () -> new GreenCoffeeBeans(ModBlocks.COFFEE_PLANT.get(), new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
+            () -> new BlockItem(ModBlocks.COFFEE_PLANT.get(), new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
 
     public static final RegistryObject<Item> COFFEE_BEANS = ITEMS.register("coffee_beans",
             () -> new Item(new Item.Properties()

@@ -34,6 +34,12 @@ public class CoffeeGrinder extends Block {
 
             if (!playerEntity.addItemStackToInventory(new ItemStack(ModItems.ICE_CUBES.get())))
                 playerEntity.dropItem(new ItemStack(ModItems.ICE_CUBES.get()), true);
+        } else if (heldItemStack.getItem() == ModItems.COFFEE_BEANS.get()) {
+            heldItemStack.setCount(heldItemStack.getCount() - 1);
+
+            if (!playerEntity.addItemStackToInventory(new ItemStack(ModItems.GROUND_COFFEE.get())))
+                playerEntity.dropItem(new ItemStack(ModItems.GROUND_COFFEE.get()), true);
+            
         }
     }
 }
