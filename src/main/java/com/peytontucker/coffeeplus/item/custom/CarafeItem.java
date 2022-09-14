@@ -1,9 +1,7 @@
 package com.peytontucker.coffeeplus.item.custom;
 
 import com.peytontucker.coffeeplus.block.ModBlocks;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
+import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -22,31 +20,18 @@ public class CarafeItem extends BlockItem {
     }
 
     public ActionResultType onItemUse(ItemUseContext context) {
-//        World world = context.getWorld();
-//        BlockPos blockpos = context.getPos();
-//        BlockState blockstate = world.getBlockState(blockpos);
-//        if (blockstate == ModBlocks.COFFEE_MAKER.get().getDefaultState()) {
-//            System.out.println("Coffee maker properly");
-//            PlayerEntity playerentity = context.getPlayer();
-//            if (!world.isRemote) {
-//                world.setBlockState(blockpos, ModBlocks.COFFEE_MAKER_WITH_CARAFE.get().getDefaultState(), 11);
-//            }
-//            return ActionResultType.func_233537_a_(world.isRemote);
-//        } else {
-//            return ActionResultType.PASS;
-//        }
-
 
         ItemStack itemstack = context.getItem();
 
         World world = context.getWorld();
         BlockPos blockpos = context.getPos();
         BlockState blockstate = world.getBlockState(blockpos);
-        if (blockstate.equals(ModBlocks.COFFEE_GRINDER.get().getDefaultState())) {
-            PlayerEntity playerentity = context.getPlayer();
+        if (blockstate.getBlock().equals(ModBlocks.COFFEE_MAKER.get())) {
+            BlockState newstate = ModBlocks.COFFEE_MAKER_WITH_CARAFE.get().getDefaultState().with(HorizontalBlock.HORIZONTAL_FACING, blockstate.get(HorizontalBlock.HORIZONTAL_FACING));
+            //PlayerEntity playerentity = context.getPlayer();
             //world.playSound(playerentity, blockpos, SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, 1.0F, 1.0F);
             if (!world.isRemote) {
-                world.setBlockState(blockpos, ModBlocks.COFFEE_MAKER_WITH_CARAFE.get().getDefaultState(), 11);
+                world.setBlockState(blockpos, newstate, 11);
                 itemstack.shrink(1);
             }
 
@@ -54,6 +39,8 @@ public class CarafeItem extends BlockItem {
         } else {
             return ActionResultType.PASS;
         }
+
+        //block.getDefaultState().with(RotatedPillarBlock.AXIS, originalState.get(RotatedPillarBlock.AXIS))
     }
 
 
