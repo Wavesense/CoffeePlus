@@ -1,6 +1,7 @@
 package com.peytontucker.coffeeplus.item;
 
 import com.peytontucker.coffeeplus.block.ModBlocks;
+import com.peytontucker.coffeeplus.item.custom.CarafeItem;
 import com.peytontucker.coffeeplus.item.custom.GreenCoffeeBeans;
 import com.peytontucker.coffeeplus.item.drinkables.DrinkableGlassItem;
 import com.peytontucker.coffeeplus.item.drinkables.IceGlassItem;
@@ -64,6 +65,10 @@ public class ModItems {
 
     public static final RegistryObject<Item> COFFEE_MAKER_WITH_CARAFE = ITEMS.register("coffee_maker_with_carafe",
             () -> new BlockItem(ModBlocks.COFFEE_MAKER_WITH_CARAFE.get(),
+                    new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
+
+    public static final RegistryObject<Item> CARAFE = ITEMS.register("carafe",
+            () -> new CarafeItem(ModBlocks.CARAFE.get(),
                     new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
 
     public static void register(IEventBus eventBus) {

@@ -54,7 +54,7 @@ public class ModBlocks {
                     .hardnessAndResistance(4f)
                     .notSolid()));
 
-    public static final RegistryObject<Block> CARAFE = registerBlock("carafe",
+    public static final RegistryObject<Block> CARAFE = BLOCKS.register("carafe",
             () -> new Carafe(AbstractBlock.Properties
                     .create(Material.IRON)
                     .hardnessAndResistance(4f)
