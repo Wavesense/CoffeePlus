@@ -37,7 +37,7 @@ public class CarafeItem extends BlockItem {
 
             return ActionResultType.func_233537_a_(world.isRemote);
         } else {
-            return ActionResultType.PASS;
+            return super.onItemUse(context);
         }
 
         //block.getDefaultState().with(RotatedPillarBlock.AXIS, originalState.get(RotatedPillarBlock.AXIS))
