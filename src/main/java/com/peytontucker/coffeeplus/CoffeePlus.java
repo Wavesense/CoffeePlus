@@ -61,11 +61,11 @@ public class CoffeePlus
 
     private void doClientStuff(final FMLClientSetupEvent event) {
         // do something that can only be done on the client
-        RenderTypeLookup.setRenderLayer(ModBlocks.COFFEE_PLANT.get(), RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(ModBlocks.MOKA_POT.get(), RenderType.getCutout());
-        RenderTypeLookup.setRenderLayer(ModBlocks.COFFEE_MAKER_WITH_CARAFE.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.CARAFE.get(), RenderType.getTranslucent());
-        RenderTypeLookup.setRenderLayer(ModBlocks.COFFEE_MAKER.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(ModBlocks.COFFEE_PLANT.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(ModBlocks.MOKA_POT.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(ModBlocks.COFFEE_MAKER_WITH_CARAFE.get(), RenderType.translucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.CARAFE.get(), RenderType.translucent());
+        RenderTypeLookup.setRenderLayer(ModBlocks.COFFEE_MAKER.get(), RenderType.cutout());
 
 
     }

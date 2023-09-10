@@ -13,31 +13,33 @@ import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import net.minecraft.item.Item.Properties;
+
 public class CarafeItem extends BlockItem {
 
     public CarafeItem(Block p_i48527_1_, Properties p_i48527_2_) {
         super(p_i48527_1_, p_i48527_2_);
     }
 
-    public ActionResultType onItemUse(ItemUseContext context) {
+    public ActionResultType useOn(ItemUseContext context) {
 
-        ItemStack itemstack = context.getItem();
+        ItemStack itemstack = context.getItemInHand();
 
-        World world = context.getWorld();
-        BlockPos blockpos = context.getPos();
+        World world = context.getLevel();
+        BlockPos blockpos = context.getClickedPos();
         BlockState blockstate = world.getBlockState(blockpos);
         if (blockstate.getBlock().equals(ModBlocks.COFFEE_MAKER.get())) {
-            BlockState newstate = ModBlocks.COFFEE_MAKER_WITH_CARAFE.get().getDefaultState().with(HorizontalBlock.HORIZONTAL_FACING, blockstate.get(HorizontalBlock.HORIZONTAL_FACING));
+            BlockState newstate = ModBlocks.COFFEE_MAKER_WITH_CARAFE.get().defaultBlockState().setValue(HorizontalBlock.FACING, blockstate.getValue(HorizontalBlock.FACING));
             //PlayerEntity playerentity = context.getPlayer();
             //world.playSound(playerentity, blockpos, SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, 1.0F, 1.0F);
-            if (!world.isRemote) {
-                world.setBlockState(blockpos, newstate, 11);
+            if (!world.isClientSide) {
+                world.setBlock(blockpos, newstate, 11);
                 itemstack.shrink(1);
             }
 
-            return ActionResultType.func_233537_a_(world.isRemote);
+            return ActionResultType.sidedSuccess(world.isClientSide);
         } else {
-            return super.onItemUse(context);
+            return super.useOn(context);
         }
 
         //block.getDefaultState().with(RotatedPillarBlock.AXIS, originalState.get(RotatedPillarBlock.AXIS))

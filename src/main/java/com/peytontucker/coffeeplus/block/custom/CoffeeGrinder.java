@@ -13,6 +13,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.World;
 
+import net.minecraft.block.AbstractBlock.Properties;
+
 public class CoffeeGrinder extends Block {
     public CoffeeGrinder(Properties properties) {
         super(properties);
@@ -20,9 +22,9 @@ public class CoffeeGrinder extends Block {
 
     @SuppressWarnings("deprecation")
     @Override
-    public ActionResultType onBlockActivated(BlockState state, World world, BlockPos pos, PlayerEntity playerEntity, Hand handIn, BlockRayTraceResult hit) {
-        if(!world.isRemote()) {
-            ItemStack heldItemStack = playerEntity.getHeldItem(handIn);
+    public ActionResultType use(BlockState state, World world, BlockPos pos, PlayerEntity playerEntity, Hand handIn, BlockRayTraceResult hit) {
+        if(!world.isClientSide()) {
+            ItemStack heldItemStack = playerEntity.getItemInHand(handIn);
             rightClickWithCertainItemStack(heldItemStack, playerEntity, world);
         }
         return ActionResultType.SUCCESS;
@@ -32,13 +34,13 @@ public class CoffeeGrinder extends Block {
         if (heldItemStack.getItem() == Items.ICE) {
             heldItemStack.setCount(heldItemStack.getCount() - 1);
 
-            if (!playerEntity.addItemStackToInventory(new ItemStack(ModItems.ICE_CUBES.get())))
-                playerEntity.dropItem(new ItemStack(ModItems.ICE_CUBES.get()), true);
+            if (!playerEntity.addItem(new ItemStack(ModItems.ICE_CUBES.get())))
+                playerEntity.drop(new ItemStack(ModItems.ICE_CUBES.get()), true);
         } else if (heldItemStack.getItem() == ModItems.COFFEE_BEANS.get()) {
             heldItemStack.setCount(heldItemStack.getCount() - 1);
 
-            if (!playerEntity.addItemStackToInventory(new ItemStack(ModItems.GROUND_COFFEE.get())))
-                playerEntity.dropItem(new ItemStack(ModItems.GROUND_COFFEE.get()), true);
+            if (!playerEntity.addItem(new ItemStack(ModItems.GROUND_COFFEE.get())))
+                playerEntity.drop(new ItemStack(ModItems.GROUND_COFFEE.get()), true);
             
         }
     }

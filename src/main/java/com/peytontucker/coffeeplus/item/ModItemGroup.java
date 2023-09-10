@@ -7,7 +7,7 @@ public class ModItemGroup {
 
     public static final ItemGroup COFFEEPLUS_GROUP = new ItemGroup("coffeePlusTab") {
         @Override
-        public ItemStack createIcon() {
+        public ItemStack makeIcon() {
             return new ItemStack(ModItems.MOKA_POT.get());
         }
     };

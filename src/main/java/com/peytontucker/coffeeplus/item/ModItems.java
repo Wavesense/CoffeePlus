@@ -23,53 +23,53 @@ public class ModItems {
 
     public static final RegistryObject<Item> MOKA_POT = ITEMS.register("moka_pot",
             () -> new BlockItem(ModBlocks.MOKA_POT.get(),
-                    new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
+                    new Item.Properties().tab(ModItemGroup.COFFEEPLUS_GROUP)));
 
     public static final RegistryObject<Item> ICE_CUBES = ITEMS.register("ice_cubes",
             () -> new Item(new Item.Properties()
-                    .group(ModItemGroup.COFFEEPLUS_GROUP)
+                    .tab(ModItemGroup.COFFEEPLUS_GROUP)
                     .food(new Food.Builder()
-                            .fastToEat()
-                            .setAlwaysEdible()
-                            .effect(() -> new EffectInstance(Effects.SLOWNESS, 10, 0), 0.5f)
+                            .fast()
+                            .alwaysEat()
+                            .effect(() -> new EffectInstance(Effects.MOVEMENT_SLOWDOWN, 10, 0), 0.5f)
                             .build())));
 
     public static final RegistryObject<Item> GREEN_COFFEE_BEANS = ITEMS.register("green_coffee_beans",
-            () -> new BlockItem(ModBlocks.COFFEE_PLANT.get(), new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
+            () -> new BlockItem(ModBlocks.COFFEE_PLANT.get(), new Item.Properties().tab(ModItemGroup.COFFEEPLUS_GROUP)));
 
     public static final RegistryObject<Item> COFFEE_BEANS = ITEMS.register("coffee_beans",
             () -> new Item(new Item.Properties()
-                    .group(ModItemGroup.COFFEEPLUS_GROUP)
+                    .tab(ModItemGroup.COFFEEPLUS_GROUP)
                     .food(new Food.Builder()
-                            .hunger(1)
-                            .saturation(0.1f)
-                            .fastToEat()
-                            .effect(() -> new EffectInstance(Effects.SPEED, 60, 0), 1f)
-                            .setAlwaysEdible()
+                            .nutrition(1)
+                            .saturationMod(0.1f)
+                            .fast()
+                            .effect(() -> new EffectInstance(Effects.MOVEMENT_SPEED, 60, 0), 1f)
+                            .alwaysEat()
                             .build())));
     public static final RegistryObject<Item> GROUND_COFFEE = ITEMS.register("ground_coffee",
-            () -> new Item(new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
+            () -> new Item(new Item.Properties().tab(ModItemGroup.COFFEEPLUS_GROUP)));
 
     public static final RegistryObject<Item> EMPTY_GLASS = ITEMS.register("empty_glass",
-            () -> new Item(new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
+            () -> new Item(new Item.Properties().tab(ModItemGroup.COFFEEPLUS_GROUP)));
 
     public static final RegistryObject<Item> ICE_GLASS = ITEMS.register("ice_glass",
             () -> new IceGlassItem(new Item.Properties()
-                    .group(ModItemGroup.COFFEEPLUS_GROUP)
-                    .maxStackSize(1)));
+                    .tab(ModItemGroup.COFFEEPLUS_GROUP)
+                    .stacksTo(1)));
 
     public static final RegistryObject<Item> ICED_COFFEE = ITEMS.register("iced_coffee",
             () -> new DrinkableGlassItem(new Item.Properties()
-                    .group(ModItemGroup.COFFEEPLUS_GROUP)
-                    .maxStackSize(1)));
+                    .tab(ModItemGroup.COFFEEPLUS_GROUP)
+                    .stacksTo(1)));
 
     public static final RegistryObject<Item> COFFEE_MAKER_WITH_CARAFE = ITEMS.register("coffee_maker_with_carafe",
             () -> new BlockItem(ModBlocks.COFFEE_MAKER_WITH_CARAFE.get(),
-                    new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
+                    new Item.Properties().tab(ModItemGroup.COFFEEPLUS_GROUP)));
 
     public static final RegistryObject<Item> CARAFE = ITEMS.register("carafe",
             () -> new CarafeItem(ModBlocks.CARAFE.get(),
-                    new Item.Properties().group(ModItemGroup.COFFEEPLUS_GROUP)));
+                    new Item.Properties().tab(ModItemGroup.COFFEEPLUS_GROUP)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

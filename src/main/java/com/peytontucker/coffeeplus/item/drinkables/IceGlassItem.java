@@ -4,6 +4,8 @@ import com.peytontucker.coffeeplus.item.ModItems;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
+import net.minecraft.item.Item.Properties;
+
 public class IceGlassItem extends Item {
 
     public IceGlassItem(Properties builder) {
