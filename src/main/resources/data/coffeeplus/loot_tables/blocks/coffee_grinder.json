@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "coffeeplus:coffee_block"
+          "name": "coffeeplus:coffee_grinder"
         }
       ]
     }
