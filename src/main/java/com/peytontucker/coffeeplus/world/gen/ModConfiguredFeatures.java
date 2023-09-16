@@ -12,7 +12,7 @@ import net.minecraft.world.gen.feature.*;
 public class ModConfiguredFeatures {
 
     public static final ConfiguredFeature<?,?> COFFEE_PLANT_CONFIG = Feature.FLOWER.configured((
-            new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(ModBlocks.COFFEE_PLANT.get().defaultBlockState()),
+            new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(ModBlocks.COFFEE_SACK.get().defaultBlockState()),
                     SimpleBlockPlacer.INSTANCE)).tries(12).build()).decorated(Features.Placements.HEIGHTMAP).count(10 );
 
     private static <FC extends IFeatureConfig> ConfiguredFeature<FC, ?> register(String p_243968_0_, ConfiguredFeature<FC, ?> p_243968_1_) {
