@@ -1,11 +1,18 @@
 package com.peytontucker.coffeeplus.block.custom;
 
+import com.peytontucker.coffeeplus.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.HorizontalBlock;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.item.ItemStack;
 import net.minecraft.state.StateContainer;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.IBooleanFunction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
@@ -20,6 +27,7 @@ import java.util.stream.Stream;
 //<DIRECTION_N> = the voxel shape for north... etc for other cardinal directions
 
 import net.minecraft.block.AbstractBlock.Properties;
+import net.minecraft.world.World;
 
 public class Carafe extends HorizontalBlock {
 public Carafe(Properties properties) {
@@ -116,4 +124,17 @@ protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockSta
 public BlockState getStateForPlacement(BlockItemUseContext context) {
         return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
         }
+
+        @Override
+        public ActionResultType use(BlockState state, World world, BlockPos blockPos, PlayerEntity player, Hand hand, BlockRayTraceResult blockRayTraceResult) {
+                if (world.isClientSide()) {
+                        return ActionResultType.PASS;
+                }
+
+                world.setBlock(blockPos, Blocks.AIR.defaultBlockState(), 1);
+                if (!player.addItem(new ItemStack(ModItems.CARAFE.get())))
+                        player.drop(new ItemStack(ModItems.CARAFE.get()), true);
+
+                return super.use(state, world, blockPos, player, hand, blockRayTraceResult);
         }
+}
