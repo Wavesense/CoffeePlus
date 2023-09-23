@@ -1,0 +1,7 @@
+{
+  "coffee_grinding": {
+    "category": "blocks",
+    "subtitle": "coffeeplus.subtitle.coffee_grinding",
+    "sounds": [ "coffeeplus:coffee_grinding" ]
+  }
+}

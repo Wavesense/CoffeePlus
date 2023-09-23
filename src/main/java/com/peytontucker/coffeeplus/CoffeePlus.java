@@ -2,6 +2,7 @@ package com.peytontucker.coffeeplus;
 
 import com.peytontucker.coffeeplus.block.ModBlocks;
 import com.peytontucker.coffeeplus.item.ModItems;
+import com.peytontucker.coffeeplus.util.ModSoundEvents;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.renderer.RenderType;
@@ -39,6 +40,7 @@ public class CoffeePlus
         // These lines register the items and blocks of the mod
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
+        ModSoundEvents.register(eventBus);
 
         eventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading
