@@ -1,11 +1,13 @@
 package com.peytontucker.coffeeplus.block.custom;
 
 import com.peytontucker.coffeeplus.block.ModBlocks;
+import com.peytontucker.coffeeplus.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.item.ItemStack;
 import net.minecraft.state.Property;
 import net.minecraft.state.StateContainer;
 import net.minecraft.util.ActionResultType;
@@ -168,6 +170,8 @@ public class CoffeeMakerWithCarafe extends HorizontalBlock {
             Direction facing = state.getValue(FACING);
             BlockState newState = ModBlocks.COFFEE_MAKER.get().defaultBlockState().setValue(FACING, facing);
             world.setBlock(pos, newState, 1);
+            if (!player.addItem(new ItemStack(ModItems.CARAFE.get())))
+                player.drop(new ItemStack(ModItems.CARAFE.get()), true);
         }
 
         return super.use(state, world, pos, player, hand, blockRayTraceResult);
