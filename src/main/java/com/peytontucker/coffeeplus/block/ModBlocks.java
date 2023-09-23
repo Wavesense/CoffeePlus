@@ -40,7 +40,7 @@ public class ModBlocks {
     // Note that we use BLOCKS.register instead of our created registerBlock method
     // this is because registerBlock automatically creates a block item. We don't want this for crops!
     public static final RegistryObject<Block> COFFEE_PLANT = BLOCKS.register("coffee_plant",
-            () -> new CoffeePlantBlock(AbstractBlock.Properties.copy(Blocks.CARROTS)));
+            () -> new CoffeePlantBlock(AbstractBlock.Properties.copy(Blocks.SWEET_BERRY_BUSH)));
 
     public static final RegistryObject<Block> MOKA_POT = BLOCKS.register("moka_pot",
             () -> new MokaPotBlock(AbstractBlock.Properties
