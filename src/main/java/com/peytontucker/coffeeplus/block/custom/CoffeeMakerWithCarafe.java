@@ -1,11 +1,18 @@
 package com.peytontucker.coffeeplus.block.custom;
 
+import com.peytontucker.coffeeplus.block.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalBlock;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.state.Property;
 import net.minecraft.state.StateContainer;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Direction;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.IBooleanFunction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
@@ -16,6 +23,7 @@ import javax.annotation.Nullable;
 import java.util.stream.Stream;
 
 import net.minecraft.block.AbstractBlock.Properties;
+import net.minecraft.world.World;
 
 public class CoffeeMakerWithCarafe extends HorizontalBlock {
     public CoffeeMakerWithCarafe(Properties properties) {
@@ -147,5 +155,21 @@ public class CoffeeMakerWithCarafe extends HorizontalBlock {
     @Override
     public BlockState getStateForPlacement(BlockItemUseContext context) {
         return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
+    }
+
+    @Override
+    public ActionResultType use(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockRayTraceResult blockRayTraceResult) {
+
+        if (world.isClientSide()) {
+            return ActionResultType.PASS;
+        }
+
+        if (player.isCrouching()) {
+            Direction facing = state.getValue(FACING);
+            BlockState newState = ModBlocks.COFFEE_MAKER.get().defaultBlockState().setValue(FACING, facing);
+            world.setBlock(pos, newState, 1);
+        }
+
+        return super.use(state, world, pos, player, hand, blockRayTraceResult);
     }
 }
