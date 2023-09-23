@@ -1,6 +1,7 @@
 package com.peytontucker.coffeeplus.block.custom;
 
 
+import com.peytontucker.coffeeplus.item.ModItems;
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -34,7 +35,7 @@ public class NewCoffeePlantBlock extends BushBlock implements IGrowable {
     }
 
     public ItemStack getCloneItemStack(IBlockReader p_185473_1_, BlockPos p_185473_2_, BlockState p_185473_3_) {
-        return new ItemStack(Items.SWEET_BERRIES);
+        return new ItemStack(ModItems.GREEN_COFFEE_BEANS.get());
     }
 
     public VoxelShape getShape(BlockState p_220053_1_, IBlockReader p_220053_2_, BlockPos p_220053_3_, ISelectionContext p_220053_4_) {
@@ -65,7 +66,7 @@ public class NewCoffeePlantBlock extends BushBlock implements IGrowable {
                 double d0 = Math.abs(p_196262_4_.getX() - p_196262_4_.xOld);
                 double d1 = Math.abs(p_196262_4_.getZ() - p_196262_4_.zOld);
                 if (d0 >= (double)0.003F || d1 >= (double)0.003F) {
-                    p_196262_4_.hurt(DamageSource.SWEET_BERRY_BUSH, 1.0F);
+                    p_196262_4_.hurt(DamageSource.LIGHTNING_BOLT, 1.0F);
                 }
             }
 
@@ -79,7 +80,7 @@ public class NewCoffeePlantBlock extends BushBlock implements IGrowable {
             return ActionResultType.PASS;
         } else if (i > 1) {
             int j = 1 + p_225533_2_.random.nextInt(2);
-            popResource(p_225533_2_, p_225533_3_, new ItemStack(Items.SWEET_BERRIES, j + (flag ? 1 : 0)));
+            popResource(p_225533_2_, p_225533_3_, new ItemStack(ModItems.GREEN_COFFEE_BEANS.get(), j + (flag ? 1 : 0)));
             p_225533_2_.playSound((PlayerEntity)null, p_225533_3_, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundCategory.BLOCKS, 1.0F, 0.8F + p_225533_2_.random.nextFloat() * 0.4F);
             p_225533_2_.setBlock(p_225533_3_, p_225533_1_.setValue(AGE, Integer.valueOf(1)), 2);
             return ActionResultType.sidedSuccess(p_225533_2_.isClientSide);
